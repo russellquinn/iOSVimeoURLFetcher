@@ -47,7 +47,6 @@ HOW TO USE
 	    	NSLog(@"Original URL: %@", convertor.originalURL);
 
 	        MPMoviePlayerViewController *newMoviePlayer = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:convertor.fetchedURL]];
-	        [newMoviePlayer.moviePlayer prepareToPlay];
 	        [self presentMoviePlayerViewControllerAnimated:newMoviePlayer];
 	        [newMoviePlayer release];
 	    }
