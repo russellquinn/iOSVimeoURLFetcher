@@ -1,3 +1,8 @@
+//
+//  VimeoURLFetcher.h
+//
+
+/*
 The MIT License (MIT)
 
 Copyright (c) 2013 Russell Quinn / False Vacuum Industries
@@ -18,3 +23,34 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
+#import <Foundation/Foundation.h>
+
+@class VimeoURLFetcher;
+
+@protocol VimeoURLFetcherDelegate
+    - (void)vimeoURLFetcherFinished:(VimeoURLFetcher *)convertor;
+@end
+
+@interface VimeoURLFetcher : NSObject<NSURLConnectionDelegate>
+{
+    NSError *error;
+    NSURLConnection *htmlConnection;
+    NSURLConnection *xmlConnection;
+    NSMutableData *responseData;
+    NSString *orignalURL;
+    NSString *fetchedURL;
+    
+    id<VimeoURLFetcherDelegate> delegate;
+}
+
+@property (nonatomic, assign) id<VimeoURLFetcherDelegate> delegate;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) NSString *orignalURL;
+@property (nonatomic, readonly) NSString *fetchedURL;
+
+- (BOOL)getRawVimeoURLFromURL:(NSString *)url;
+
+@end
