@@ -23,21 +23,21 @@ Notes:
 HOW TO USE
 ----
 
-# Add VimeoURLFetcher.h and VimeoURLFetcher.c to your project.
+* Add VimeoURLFetcher.h and VimeoURLFetcher.c to your project.
 
-# Import the header file:
+* Import the header file:
 
 ```objective-c
 	#import "VimeoURLFetcher.h"
 ```
 
-# Declare that your UIViewController, or whatever, adopts the VimeoURLFetcherDelegate protocl
+* Declare that your UIViewController, or whatever, adopts the VimeoURLFetcherDelegate protocl
 
 ```objective-c
 	YourViewController<VimeoURLFetcherDelegate>
 ```
 
-# Implement vimeoURLFetcherFinished in your implementation file. If the lookup failed then .fetchedURL will be nil and there will likely be error information in .error. The original URL will be in .orignalURL.
+* Implement vimeoURLFetcherFinished in your implementation file. If the lookup failed then .fetchedURL will be nil and there will likely be error information in .error. The original URL will be in .orignalURL.
 
 For example, to play a Vimeo video back in iOS's MPMoviePlayerViewController:
 
@@ -56,7 +56,7 @@ For example, to play a Vimeo video back in iOS's MPMoviePlayerViewController:
 	}
 ```
 
-# Then whenever you want to play a video:
+* Then whenever you want to play a video:
 
 ```objective-c
  	VimeoURLFetcher *vimeoURLFetcher = [[VimeoURLFetcher alloc] init];
