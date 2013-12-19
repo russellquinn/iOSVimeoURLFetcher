@@ -37,9 +37,7 @@ HOW TO USE
 	YourViewController<VimeoURLFetcherDelegate>
 ```
 
-* Implement vimeoURLFetcherFinished in your implementation file. If the lookup failed then .fetchedURL will be nil and there will likely be error information in .error. The original URL will be in .orignalURL.
-
-For example, to play a Vimeo video back in iOS's MPMoviePlayerViewController:
+* Implement vimeoURLFetcherFinished in your implementation file. If the lookup failed then .fetchedURL will be nil and there will likely be error information in .error. The original URL will be in .orignalURL. For example, to play a Vimeo video back in iOS's MPMoviePlayerViewController:
 
 ```objective-c
 	- (void)vimeoURLFetcherFinished:(VimeoURLFetcher *)convertor
