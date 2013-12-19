@@ -25,7 +25,13 @@ HOW TO USE
 
 1. Add VimeoURLFetcher.h and VimeoURLFetcher.c to your project.
 
-2. #import "VimeoURLFetcher.h"
+2. Import the header file:
+
+<pre>
+<code>
+	#import "VimeoURLFetcher.h"
+</code>
+</pre>
 
 3. Declare that your UIViewController, or whatever, adopts the VimeoURLFetcherDelegate protocl
 
