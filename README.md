@@ -14,11 +14,11 @@ This class will:
 
 Notes:
 
-* It doesn't instantiate a temporary UIWebView, so it should be faster than other solutions. 
-* It runs asynchronously.
-* It's currently non-ARC.
+* It doesn't instantiate a temporary UIWebView, so it should be faster than other solutions
+* It runs asynchronously
+* It's currently non-ARC
 * Don't store and reuse the fetched URL anywhere, as it will quickly become invalid
-* The scraping method used is currently pretty brittle and dumb, so it's liable to break if the source format changes.
+* The scraping method used is currently pretty brittle and dumb, so it's liable to break if the source format changes
 
 HOW TO USE
 ----
@@ -31,7 +31,7 @@ HOW TO USE
 	#import "VimeoURLFetcher.h"
 ```
 
-* Declare that your UIViewController, or whatever, adopts the VimeoURLFetcherDelegate protocl
+* Declare that your UIViewController, or whatever, adopts the VimeoURLFetcherDelegate protocol:
 
 ```objective-c
 	YourViewController<VimeoURLFetcherDelegate>
