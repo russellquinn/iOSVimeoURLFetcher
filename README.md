@@ -44,7 +44,7 @@ HOW TO USE
 	{
 	    if (convertor.error == nil && convertor.fetchedURL != nil)
 	    {
-	    	NSLog(@"Original URL: %@", convertor.originaURL);
+	    	NSLog(@"Original URL: %@", convertor.originalURL);
 
 	        MPMoviePlayerViewController *newMoviePlayer = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL URLWithString:convertor.fetchedURL]];
 	        [newMoviePlayer.moviePlayer prepareToPlay];
