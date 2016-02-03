@@ -128,7 +128,20 @@
         if (jsonData != nil)
         {
             [fetchedURL release];
-            fetchedURL = [[[[[jsonData objectForKey:@"request"] objectForKey:@"files"] objectForKey:@"h264"] objectForKey:@"hd"] objectForKey:@"url"];
+            
+            NSDictionary *filesDict = [[jsonData objectForKey:@"request"] objectForKey:@"files"];
+            if (filesDict != nil)
+            {
+                //old-style Vimeo reponse
+                fetchedURL = [[[filesDict objectForKey:@"h264"] objectForKey:@"hd"] objectForKey:@"url"];
+                
+                if (fetchedURL == nil)
+                {
+                    //new-style Vimeo reponse with HLS support
+                    fetchedURL = [[filesDict objectForKey:@"hls"] objectForKey:@"url"];
+                }
+            }
+            
             [fetchedURL retain];
         }
         else
