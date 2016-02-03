@@ -10,7 +10,7 @@ When you watch a Vimeo video on the website, it generates a temporary URL to its
 This class will:
 
 * Scrape the provided Vimeo HTML page for the URL to the JSON metadata
-* Parse the JSON and get the HD H.264 stream
+* Parse the JSON and get the HLS stream
 
 Notes:
 
